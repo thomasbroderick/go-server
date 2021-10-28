@@ -1,0 +1,48 @@
+POST      http://localhost:8080/api HTTP/1.1
+Content-Type: application/json
+
+{
+    "jsonrpc":"2.0",
+    "id":21,
+    "method":"create_environment",
+    "params": 
+    {
+        "name": "NEW-T",
+        "propagation_step_size": 60,
+        "propagation_method": "sp",
+        "integrator_type": "gauss_jackson",
+        "integrator_order": "4",
+        "integrator_step_size": 15,
+        "gravity_potential_enabled": true,
+        "gravity_potential_model": "wgs84",
+        "gravity_potential_order": 18,
+        "gravity_potential_degree": 18,
+        "solar_radiation_enabled": true,
+        "solar_radiation_shadow_model": "umbra_penumbra",
+        "solar_radiation_body_model": "spherical",
+        "third_body_enabled": true,
+        "third_body_model": "de405",
+        "third_body_sun": true,
+        "third_body_moon": true,
+        "third_body_mercury": false,
+        "third_body_venus": false,
+        "third_body_mars": false,
+        "atmospheric_drag_enabled": true,
+        "atmospheric_drag_model": "jacchia60",
+        "atmospheric_drag_body_model": "spherical",
+        "readonly": false
+    }
+}
+
+
+
+###
+GET     http://localhost:8080/api HTTP/1.1
+Content-Type: application/json
+
+{
+    "id":21
+}
+
+
+###
